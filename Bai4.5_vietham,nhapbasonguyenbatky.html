@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm nhập ba số nguyên bất kỳ</title>
+</head>
+<body>
+<p>Nhập vào a</p>
+<input type="number" id="a">
+<p>Nhập vào b</p>
+<input type="number" id="b">
+<p>Nhập vào c</p>
+<input type="number" id="c">
+<button type="button" onclick="checkNumberMin()">Kiểm tra số nhỏ nhất</button>
+<p id="result"></p>
+<script>
+function checkNumberMin(){
+        let a = +document.getElementById('a').value
+        let b = +document.getElementById('b').value
+        let c = +document.getElementById('c').value
+        if (a<b){
+            if (b<c){
+                document.getElementById('result').innerHTML= 'a là số bé nhất'
+            }else{
+                document.getElementById('result').innerHTML= 'c là số bé nhất'
+            }
+        }else if (b<c) {
+            document.getElementById('result').innerHTML= 'b là số bé nhất'
+        }else {
+            document.getElementById('result').innerHTML= 'c là số bé nhất'
+        }
+    }
+</script>
+</body>
+</html>

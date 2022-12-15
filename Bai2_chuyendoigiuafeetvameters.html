@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<p>Nhập vào độ dài</p>
+<input type="number" id="length">
+<button type="button" onclick="meterToFoot()">M->F</button>
+<button type="button" onclick="footToMeter()">F->M</button>
+<p id="result"></p>
+<script>
+    function footToMeter(){
+        let foot = document.getElementById('length').value
+        let meter = 0.305 * foot
+        document.getElementById('result').innerText = 'độ dài là ' +meter
+    }
+    function meterToFoot(){
+        let meter = document.getElementById('length').value
+        let foot = 3.279 * meter
+        document.getElementById('result').innerHTML = 'độ dài là ' +foot
+    }
+</script>
+</body>
+</html>

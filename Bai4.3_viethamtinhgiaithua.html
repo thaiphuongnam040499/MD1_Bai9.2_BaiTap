@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa</title>
+</head>
+<body>
+<p>Nập vào một số</p>
+<input type="number" id="number">
+<button type="button" onclick="totalFactorial()">Tính</button>
+<p id="result"></p>
+<script>
+  function totalFactorial(){
+    let number = +document.getElementById('number').value
+    let giaithua = 1
+    if(number == 0 || number == 1){
+      giaithua = 1;
+    }else if(number<0){
+      alert('error')
+    }else{
+      for (let i=1;i<=number;i++) {
+        giaithua = giaithua*i
+        document.getElementById('result').innerHTML = giaithua
+      }
+    }
+  }
+</script>
+</body>
+</html>

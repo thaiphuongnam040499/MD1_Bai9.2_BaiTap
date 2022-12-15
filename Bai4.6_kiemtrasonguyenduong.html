@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương</title>
+</head>
+<body>
+<p>Nhập vào một số</p>
+<input type="number" id="number">
+<button type="button" onclick="result()">CHECK</button>
+<p id="result"></p>
+<script>
+  function checkNumber(number){
+    if (number>0){
+      return true
+    }else {
+      return false
+    }
+  }
+  function result(){
+    let number = document.getElementById('number').value
+    document.getElementById('result').innerHTML= checkNumber(number)
+  }
+
+</script>
+</body>
+</html>

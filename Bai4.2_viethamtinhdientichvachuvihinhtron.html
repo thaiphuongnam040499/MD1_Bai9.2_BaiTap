@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diên tích và chu vi hình tròn</title>
+</head>
+<body>
+<p>Nhập vào bán kính </p>
+<input type="text" id="radius">
+<button type="button" onclick="total()">Tính</button>
+<p id="result"></p>
+<p id="result1"></p>
+<script>
+    function totalPerimeter(R){
+       return  2*Math.PI*R
+    }
+    function totalArea(R){
+        return R*R*Math.PI
+    }
+    function total(){
+        let R= +document.getElementById('radius').value
+        let chuvi = totalPerimeter(R)
+        let dientich = totalArea(R)
+        document.getElementById('result').innerHTML = 'Chu vi là ' + chuvi
+        document.getElementById('result1').innerHTML = 'Diện tích là ' + dientich
+    }
+</script>
+</body>
+</html>

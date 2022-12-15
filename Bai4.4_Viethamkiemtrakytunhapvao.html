@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<p>Nhập vào cái đéo gì cũng được</p>
+<input type="text" id="check">
+<button type="button" onclick="check()">Kiểm tra</button>
+<p id="result"></p>
+<script>
+  function checkNumber(txt){
+    if (isNaN(txt)===false){
+        return true
+    }return false
+  }
+  function check(){
+    let txt= document.getElementById('check').value
+    document.getElementById('result').innerHTML = checkNumber(txt)
+  }
+</script>
+</body>
+</html>

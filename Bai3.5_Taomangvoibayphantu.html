@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+function checkList(name){
+    let arr1 =['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus']
+    let arr2 = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo']
+    for (let i = 0; i <= arr1.length; i++) {
+        if (name === arr1[i]){
+            arr1[i] === arr2[i]
+            return (arr2[i])
+        }
+    }return ('không có trong mảng')
+}let name = prompt('Nhập tên sao ')
+document.write(checkList(name))
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tạo mảng ký tự bất kỳ</title>
+</head>
+<body>
+<p>Nhập vào mảng</p>
+<input type="text" id="arr">
+<button type="button" onclick="array()">NHẬP</button>
+<p>Nhập vào ký tự cần tìm</p>
+<input type="text" id="kytu">
+<button type="button" onclick="charactersInArray()">Kiểm Tra</button>
+<p id="result"></p>
+<p id="result1"></p>
+<p id="result2"></p>
+
+<script>
+    let arr = []
+function array() {
+    let characters = document.getElementById('arr').value
+    arr.push(characters)
+    document.getElementById('result').innerHTML = arr
+}
+function charactersInArray(){
+        let kytu = document.getElementById('kytu').value
+    for (let i = 0; i < arr.length; i++) {
+        if (kytu === arr[i]) {
+            document.getElementById('result1').innerHTML = 'ký tự cần tìm: '+arr[i]
+            document.getElementById('result2').innerHTML = 'vị trí của ký tự cần tìm: '+i
+            break;
+        } else {
+            document.getElementById('result1').innerHTML = -1
+        }
+    }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập 2 số nguyên và đổi chỗ cho nhau</title>
+</head>
+<body>
+<script>
+  function convertNumber(a, b) {
+      a = a - b;
+      b = a + b;
+      a = b - a;
+      return [a, b]
+  }
+  let a = +prompt("nhập 1 ")
+  let b = +prompt("nhập 2 ")
+  document.write("ban đầu " +a+","+b+"<br>");
+  document.write("sau khi đổi vị trí " +convertNumber(a,b));
+</script>
+</body>
+</html>
