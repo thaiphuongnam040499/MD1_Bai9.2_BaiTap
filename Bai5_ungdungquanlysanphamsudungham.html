@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        margin-top: 40px ;
+    }
+    table{
+        width: 100%;
+        margin-top: 30px;
+    }
+    #validate{
+        color: red;
+    }
+    #header{
+        color: blue;
+    }
+    #create{
+        background-color: chocolate;
+        color: aquamarine;
+        border-radius: 20%;
+    }
+    #edit{
+        background-color: blue;
+        color: white;
+        border-radius: 20%;
+    }
+    #delete{
+        background-color: red;
+        border-radius: 20%;
+        color: white;
+    }
+</style>
+<body>
+<div class="product">
+    <label id="validate"></label>
+    <p>THE NAME PRODUCT</p>
+    <label><input type="text" id="newproduct"></label>
+    <button type="button" id="create" onclick="createProduct()">Create</button>
+</div>
+<div class="table_product">
+    <table border="1">
+        <tr>
+            <th id="header" colspan="4">Product Management</th>
+        </tr>
+        <tr>
+            <th>STT</th>
+            <th>NAME</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+        <tbody id="draw_table">
+
+        </tbody>
+    </table>
+</div>
+<script>
+    let listProduct = ['Bàn Phím', 'Chuột']
+    function showListProduct() {
+        let drawtable = "";
+        for (let i = 0; i < listProduct.length; i++) {
+            drawtable += `<tr>
+                            <td>${i + 1}</td>
+                            <td>${listProduct[i]}</td>
+                            <td><button id="edit" onclick="updateProduct(${i})">Edit</button></td>
+                            <td><button id="delete" onclick="deleteProduct(${i})">Delete</button></td>
+                          </tr>`
+        }
+        document.getElementById('draw_table').innerHTML = drawtable;
+    }showListProduct()
+    function createProduct(){
+        let newProduct =document.getElementById('newproduct').value
+        if (newProduct.trim() === ''){
+            document.getElementById('validate').innerHTML = 'Nhập lại đê'
+        }else {
+            document.getElementById('validate').innerHTML= '<lable style="color: blue">' +'Create product success'+ '</lable> '
+            listProduct.push(newProduct)
+            showListProduct()
+        }
+    }
+    function updateProduct(index){
+        let updateProduct = prompt('nhập vào tên sản phẩm thay đổi'+ listProduct[index])
+        if (updateProduct.trim()=== ''){
+            document.getElementById('validate').innerHTML= 'nhập lại đê'
+        }else {
+            let check=false
+            for (let i = 0; i < listProduct.length; i++) {
+                if (updateProduct === listProduct[i]){
+                    check = true
+                    break;
+                }
+            }
+            if (check){
+                document.getElementById('validate').innerHTML= 'nhập lại đê'
+            }else {
+                document.getElementById('validate').innerHTML= '<lable style="color: blue">' +'Update product success'+ '</lable>'
+                listProduct[index]= updateProduct;
+                showListProduct()
+            }
+        }
+    }
+    function deleteProduct(index){
+        if (confirm('Bạn có muốn xóa hay không')){
+            document.getElementById('validate').innerHTML = '<lable style = "color: blue">' + 'Xóa thành công ' + '</lable>'
+            listProduct.splice(index,1)
+            showListProduct()
+        }else {
+            document.getElementById('validate').innerHTML= 'không xóa à'
+        }
+    }
+</script>
+</body>
+</html>
